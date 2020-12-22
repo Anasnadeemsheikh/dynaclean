@@ -4,6 +4,10 @@ import './App.css';
 import Maps from './maps';
 import List from './list';
 import MOCK_DATA from './MOCK_DATA.json'
+
+import {useDispatch,useSelector} from 'react-redux'
+ import { incresae } from "./action/bindata";
+
  //const path = require('path');
   //   var fs = require('browserify-fs');
     //var path =  require("path");
@@ -18,8 +22,18 @@ const [binsmode, setbinsmode] = useState(true);
 const [routesmode, setroutesmode] = useState(false);
 const [feedbackmode, setfeedbackmode] = useState(false);
 
+       const dispatch=useDispatch();
+  
+    const counterr=useSelector(state=>state.bindata)
+  
 const ref = firebase.database().ref();
    
+
+  const incre=()=>{
+    dispatch(incresae())
+    console.log(counterr)
+  }
+
   useEffect(() => {
     // ref
     //   //.doc() use if for some reason you want that firestore generates the id
@@ -89,8 +103,8 @@ const submitted = e =>{
             <div className="dashboard-header">
             <div className="dashb">
             
-            <text className="lable">
-                DASHBOARD
+            <text onClick={incre} className="lable">
+                DASHBOARD  
             </text>
             <button onClick={binClick} className={binsmode ?  "Selected": "bins"} >
                 Bins

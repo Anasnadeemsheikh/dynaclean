@@ -1,6 +1,6 @@
 
 const initialstate={
-    counter=0
+    counter:0
 }
 
 
@@ -11,6 +11,10 @@ const binData=(state=initialstate,action)=>{
             ...state,
             counter:state.counter++
         }
+        default:
+            return{
+                ...state
+            }
     }
 }
 
