@@ -5,15 +5,15 @@ import Maps from './maps';
 import List from './list';
 import MOCK_DATA from './MOCK_DATA.json'
  //const path = require('path');
-    var fs = require('browserify-fs');
-    var path =  require("path");
+  //   var fs = require('browserify-fs');
+    //var path =  require("path");
 
 function Dashboard(){
-   fs.mkdir("./src/data");
+ /*  fs.mkdir("./src/data");
         fs.readFile("MOCK_DATA.json", 'utf-8', function(err, data) {
             console.log(data);
         });
-   
+   */
 const [binsmode, setbinsmode] = useState(true);
 const [routesmode, setroutesmode] = useState(false);
 const [feedbackmode, setfeedbackmode] = useState(false);
